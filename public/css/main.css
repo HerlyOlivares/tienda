@@ -47,6 +47,23 @@ ul.redes li a
 	width: 100px;
 }
 
+/*//////////// Efecto pinterest ///////////////////////////*/
+#container {
+    margin: 20px auto;
+}
+#container > div {
+    -webkit-box-shadow: 0 4px 15px -5px #555;
+    box-shadow: 0 4px 15px -5px #555;
+    background-color: #fff;
+    width:220px;
+    padding:2px;
+    border:2px solid rgba(0,0,0,0.8);
+}
+#container > div img {
+    padding: 0px;
+    display: block;
+    width: 100%;
+}
 /* Catalogo -------------*/
 /*#products {
 position: relative;

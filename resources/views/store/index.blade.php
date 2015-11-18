@@ -2,10 +2,10 @@
 
 @section('content')
 
-	<div class="productos">
+	<div class="productos" id="container">
 		@foreach($productos as $productos)
 			
-			<div class="productos">
+			<div class="producto">
 				<h3>{{$productos->name}}</h3>
 				<img src="{{$productos->image}}" width="200" alt="">
 				<div class="producto-info">
