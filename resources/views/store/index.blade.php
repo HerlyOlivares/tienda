@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="productos" id="container">
+	<div class="productos container" id="container">
 		@foreach($productos as $productos)
 			
 			<div class="producto">
@@ -12,8 +12,8 @@
 					<p>{{$productos->extract}}</p>
 					<p>Precio:${{number_format($productos->precio),2}}</p>
 					<p>
-						<a href="#">Comprar</a>
-						<a href="{{route('product-detail', $productos->slug)}}" title="">Leer mas...</a>
+						<a class="btn btn-warning" href="#"><i class="fa fa-cart-plus"></i> Comprar</a>
+						<a class="btn btn-primary" href="{{route('product-detail', $productos->slug)}}" title=""><i class="fa fa-chevron-circle-right"></i> Leer mas...</a>
 					</p>
 				</div>
 			</div>
