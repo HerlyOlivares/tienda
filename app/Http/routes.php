@@ -18,3 +18,6 @@
 Route::get('/', ['as' => 'home', 'uses' => 'StoreController@index']);
 
 Route::get('producto/{slug}', ['as' => 'product-detail', 'uses' => 'StoreController@show']);
+
+/*------ Carrito de compras -----*/
+Route::get('cart/show', ['as' => 'cart-show', 'uses' => 'CartController@show']);
