@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', ['as' => 'home', 'uses' => 'StoreController@index']);
+
+Route::get('producto/{slug}', ['as' => 'product-detail', 'uses' => 'StoreController@show']);
