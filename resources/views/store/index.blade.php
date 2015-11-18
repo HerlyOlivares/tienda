@@ -1,12 +1,14 @@
 @extends('store.template')
 
 @section('content')
+	
+	@include('store.partials.slider')
 
 	<div class="productos container" id="container">
 		@foreach($productos as $productos)
 			
-			<div class="producto">
-				<h3>{{$productos->name}}</h3>
+			<div class="text-center producto white-panel">
+				<h3>{{$productos->name}}</h3><hr>
 				<img src="{{$productos->image}}" width="200" alt="">
 				<div class="producto-info">
 					<p>{{$productos->extract}}</p>
