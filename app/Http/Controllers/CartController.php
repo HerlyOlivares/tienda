@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Productos;
+
 class CartController extends Controller
 {
-    public function __contruct(){
-
-        if (!\Session::has('cart'))\Session::put('cart', array());
-
+    public function __construct()
+    {
+        if(!\Session::has('cart')) \Session::put('cart', array());
     }
     /**
      * Display a listing of the resource.
@@ -54,6 +55,21 @@ class CartController extends Controller
     public function show()
     {
         return \Session::get('cart');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Productos $product)
+    {
+        $cart = \Session::get('cart');
+        $product->quantity = 1;
+        $cart[$product->slug] = $product;
+        \Session::put('cart', $cart);
+        return redirect()->route('cart-show');
     }
 
     /**
