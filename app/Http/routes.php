@@ -38,3 +38,7 @@ Route::get('producto/{slug}', ['as' => 'product-detail', 'uses' => 'StoreControl
 Route::get('cart/show', ['as' => 'cart-show', 'uses' => 'CartController@show']);
 
 Route::get('cart/add/{producto}', ['as' => 'cart-add', 'uses' => 'CartController@add']);
+
+Route::get('cart/delete/{producto}', ['as' => 'cart-delete', 'uses' => 'CartController@delete']);
+
+Route::get('cart/trash', ['as' => 'cart-trash', 'uses' => 'cartcontroller@trash']);
