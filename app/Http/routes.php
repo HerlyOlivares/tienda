@@ -25,10 +25,10 @@ Route::bind('category', function($category){
 Route::bind('user', function($user){
     return App\User::find($user);
 });
-Route::get('/', [
+/*Route::get('/', [
 	'as' => 'home',
 	'uses' => 'StoreController@index'
-]);
+]);*/
 
 Route::get('/', ['as' => 'home', 'uses' => 'StoreController@index']);
 
@@ -41,4 +41,6 @@ Route::get('cart/add/{producto}', ['as' => 'cart-add', 'uses' => 'CartController
 
 Route::get('cart/delete/{producto}', ['as' => 'cart-delete', 'uses' => 'CartController@delete']);
 
-Route::get('cart/trash', ['as' => 'cart-trash', 'uses' => 'cartcontroller@trash']);
+Route::get('cart/trash', ['as' => 'cart-trash', 'uses' => 'CartController@trash']);
+
+Route::get('cart/update/{producto}/{quantity}', ['as' => 'cart-update', 'uses' => 'CartController@update']);

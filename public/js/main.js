@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-    "use strict";
+    /*"use strict";*/
     /*
     $('#container').pinto({
         itemWidth:230,
@@ -11,5 +11,13 @@ $(document).ready(function($) {
 
     $('#container').pinto();
 
-   
+    //update item cart
+    $('.item-quantity').change(function(event) {
+        
+        var id = $(this).data('id');
+        var href = $(this).data('href');
+        var quantity = $("#product_" + id).val();
+        
+        window.location.href = href + "/" + quantity;
+    });
 });

@@ -55,7 +55,8 @@ class CartController extends Controller
     public function show()
     {
         $cart = \Session::get('cart');
-        return view('store.cart', compact('cart'));
+        $total = $this->total();
+        return view('store.cart', compact('cart', 'total'));
     }
 
     /**
@@ -91,6 +92,25 @@ class CartController extends Controller
         return redirect()->route('cart-show');
     }
 
+     public function update(Productos $product, $quantity)
+    {
+        $cart = \Session::get('cart');
+        $cart[$product->slug]->quantity = $quantity;
+        \Session::put('cart', $cart);
+        return redirect()->route('cart-show');
+    }
+
+    //total del carrito
+    private function total()
+    {
+        $cart = \Session::get('cart');
+        $total = 0;
+        foreach($cart as $item){
+            $total += $item->price * $item->quantity;
+        }
+        return $total;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -109,10 +129,7 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    
 
     /**
      * Remove the specified resource from storage.
