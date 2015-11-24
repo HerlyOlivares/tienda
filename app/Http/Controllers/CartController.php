@@ -111,6 +111,16 @@ class CartController extends Controller
         return $total;
     }
 
+    //detalle de orden d compras en carrito
+    public function OrderDetail()
+    {
+        if(count(\Session::get('cart')) <= 0) return redirect()->route('home');
+        $cart = \Session::get('cart');
+        $total = $this->total();
+
+        return view('store.order-detail', compact('cart', 'total'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

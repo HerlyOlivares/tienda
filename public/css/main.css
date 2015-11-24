@@ -111,7 +111,7 @@ transition: all 0.3s ease-in-out;
 }
 
 /* Carrito -----------*/
-.table-cart
+.table-cart, .page
 {
 	background: #fff;
 	border-radius: 1em;

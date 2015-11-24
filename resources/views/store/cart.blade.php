@@ -60,7 +60,7 @@
 			<p>
 				<a href="{{ route('home')}}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> seguir comprando</a>
 				@if(count($cart))
-					<a href="" class="btn btn-primary">continuar <i class="fa fa-arrow-circle-right"></i></a>
+					<a href="{{ route('order-detail') }}" class="btn btn-primary">continuar <i class="fa fa-arrow-circle-right"></i></a>
 				@else
 					<a href="" class="btn btn-primary disabled" role="button">continuar <i class="fa fa-arrow-circle-right"></i></a>
 				@endif
