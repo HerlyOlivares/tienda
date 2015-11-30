@@ -133,7 +133,7 @@ class PaypalController extends BaseController
         return \Redirect::route('home')
             ->with('message', 'La compra fue cancelada');
     }
-    private function saveOrder($cart)
+    protected function saveOrder($cart)
     {
         $subtotal = 0;
         foreach($cart as $item){
@@ -151,7 +151,7 @@ class PaypalController extends BaseController
         }
     }
     
-    private function saveOrderItem($item, $order_id)
+    protected function saveOrderItem($item, $order_id)
     {
         OrderItem::create([
             'quantity' => $item->quantity,

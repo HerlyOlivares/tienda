@@ -71,3 +71,6 @@ Route::get('payment/status', array(
 	'as' => 'payment.status',
 	'uses' => 'PaypalController@getPaymentStatus',
 ));
+
+// admin ---------------------
+Route::resource('admin/categoria', 'Admin\CategoryController@index');
